@@ -1,0 +1,28 @@
+type Query {
+  Data: [Data]
+}
+type Data {
+  id: ID!
+  Dessert: String
+  nutritionInfo: nutritionInfo
+}
+
+ type nutritionInfo {
+      id: ID!
+      calories: String
+      fat: String
+      carb: String
+      protein: String
+  }
+
+  type Mutation {
+    addDessert(Dessert:String, calories: String, fat : String, carb : String, protein : String): Data!
+    deleteDessert(dataId: Int!):Data
+  }
+ 
+  input NutritionInfoInput {
+    calories: String
+    fat: String
+    carb: String
+    protein: String
+  }
